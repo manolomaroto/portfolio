@@ -17,7 +17,11 @@ export class HeaderComponent implements OnInit {
 
   jqueryCode(): void{
     $('.nav-switch').on('click', (event) => {
-      $('.main-menu').slideToggle(400);
+      $('.main-menu').slideToggle(200);
+      event.preventDefault();
+    });
+    $('a').on('click', (event) => {
+      $('.main-menu').slideToggle(200);
       event.preventDefault();
     });
   }
