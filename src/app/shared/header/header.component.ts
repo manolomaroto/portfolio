@@ -18,8 +18,6 @@ export class HeaderComponent implements OnInit {
 
   jqueryCode(): void{
     if ($(window).width() <= 768) {
-      console.log($(window).width())
-      
       $('.nav-switch').on('click', (event) => {
         $('.main-menu').slideToggle(200);
         event.preventDefault();
