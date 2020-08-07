@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 declare let $: any;
 
@@ -16,14 +17,19 @@ export class HeaderComponent implements OnInit {
   }
 
   jqueryCode(): void{
-    $('.nav-switch').on('click', (event) => {
-      $('.main-menu').slideToggle(200);
-      event.preventDefault();
-    });
-    $('a').on('click', (event) => {
-      $('.main-menu').slideToggle(200);
-      event.preventDefault();
-    });
+    if ($(window).width() <= 768) {
+      console.log($(window).width())
+      
+      $('.nav-switch').on('click', (event) => {
+        $('.main-menu').slideToggle(200);
+        event.preventDefault();
+      });
+      $('a').on('click', (event) => {
+        $('.main-menu').slideToggle(200);
+        event.preventDefault();
+      });
+  }
+    
   }
 
 }
